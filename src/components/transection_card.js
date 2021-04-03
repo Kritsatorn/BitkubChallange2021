@@ -9,10 +9,10 @@ const TransCard = ({ item, index }) => {
   return (
     <>
       <div className="flex text-gray-700 justify-between px-4">
-        <div> {index} </div>
-        <div className=""> FROM {from} </div>
-        <div> TO {to} </div>
-        <div>
+        <div className="text-red-600"> {index} </div>
+        <div className="text-blue-500"> FROM {from} </div>
+        <div className="text-green-500"> TO {to} </div>
+        <div className="text-red-700">
           VAL {value < N ? intToFloat(value / N, 18) : intToFloat(value / N, 0)}
           KBTC
         </div>
