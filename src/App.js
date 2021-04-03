@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useContext, useEffect, useState } from "react";
+import { BKTCContext } from "./context/bktc";
+import TransCard from "./components/transection_card";
 function App() {
+  const { transData } = useContext(BKTCContext);
+  const { count, setCount } = useState([]);
+  useEffect(() => {
+    console.log(transData);
+  }, [transData]);
+  const cal = (item) => {
+    console.log(item);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {transData &&
+        transData.map((item, index) => (
+          <TransCard key={count} item={item} index={index} />
+        ))}
+      {transData && transData.map((item, index) => cal(item))}
     </div>
   );
 }
