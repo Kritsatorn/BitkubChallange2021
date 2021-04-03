@@ -11,7 +11,11 @@ function App() {
     // console.log(transData);
     console.log();
   }, [transData]);
-  const cal = ({ item }) => {};
+  const cal = ({ item }) => {
+    const { from, to, value } = item;
+    // user [ "from "]  -= value
+    // user ["to "] -= to
+  };
   return (
     <div className="App">
       {transData &&
